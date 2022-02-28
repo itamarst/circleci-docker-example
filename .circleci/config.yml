@@ -18,7 +18,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: |
-          docker build -f Dockerfile.ubuntu .
+          docker build -f Dockerfile.fedora35 .
 
 workflows:
   docker-image-workflow:
