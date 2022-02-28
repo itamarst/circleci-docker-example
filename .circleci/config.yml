@@ -11,7 +11,18 @@ jobs:
           export DOCKER_BUILDKIT=1
           docker build .
 
+  docker-image-2:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: |
+          export DOCKER_BUILDKIT=1
+          docker build -f Dockerfile.ubuntu .
+
 workflows:
   docker-image-workflow:
     jobs:
       - docker-image
+      - docker-image-2
