@@ -6,7 +6,9 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
+          version: "20.10.11"
+          docker_layer_caching: true
       - run: |
           export DOCKER_BUILDKIT=1
           docker build .
@@ -16,7 +18,9 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
+          version: "20.10.11"
+          docker_layer_caching: true
       - run: |
           docker build -f Dockerfile.fedora35 .
 
