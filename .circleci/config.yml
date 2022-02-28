@@ -9,3 +9,8 @@ jobs:
       - setup_remote_docker
       - run: |
           docker build .
+
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
