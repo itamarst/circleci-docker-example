@@ -11,6 +11,6 @@ jobs:
           docker build .
 
 workflows:
-  say-hello-workflow:
+  docker-image-workflow:
     jobs:
-      - say-hello
+      - docker-image
