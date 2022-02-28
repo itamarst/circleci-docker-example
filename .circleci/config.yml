@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  docker-image:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: |
+          export DOCKER_BUILDKIT=1
+          docker build .
+
+workflows:
+  docker-image-workflow:
+    jobs:
+      - docker-image
