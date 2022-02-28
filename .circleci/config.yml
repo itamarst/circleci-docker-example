@@ -8,6 +8,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: |
+          export DOCKER_BUILDKIT=1
           docker build .
 
 workflows:
